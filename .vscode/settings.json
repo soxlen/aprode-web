@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "C:\\Users\\APRODE8\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.enabled": true
+}

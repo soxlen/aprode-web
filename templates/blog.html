@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include 'layouts/head.html' %}
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="preloader"></div>
+
+  <header>
+    <!-- header-area start -->
+    <div id="sticker" class="header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            {% include 'layouts/menu.html' %}
+            <!-- END: Navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header-area end -->
+  </header>
+  <!-- header end -->
+
+  <!-- Start Bottom Header -->
+  <div class="header-bg page-area">
+    <div class="home-overly"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="slider-content text-center">
+            <div class="header-bottom">
+              <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
+                <h1 class="title2">My Blog</h1>
+              </div>
+              <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <h2 class="title3">Profesional Blog Page</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Header -->
+  <div class="blog-page area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="page-head-blog">
+            <div class="single-blog-page">
+              <!-- search option start -->
+              <form action="#">
+                <div class="search-option">
+                  <input type="text" placeholder="Search...">
+                  <button class="button" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                </div>
+              </form>
+              <!-- search option end -->
+            </div>
+            <div class="single-blog-page">
+
+              <!-- recent start -->
+              {% if recientes != '' %}
+              
+              <div class="left-blog">
+                <h4>recent post</h4>
+                <div class="recent-post">
+                  <!-- start single post -->
+                  {% for rec in recientes %}
+                  <div class="recent-single-post">
+                    <div class="post-img">
+                      <a href="/post/{{rec['id']}}">
+												   <img src="/static/img/blog/1.jpg" alt="">
+												</a>
+                    </div>
+                    <div class="pst-content">
+                      <p><a href="/post/{{rec['id']}}">{{rec.titulo}}</a></p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <!-- End single post -->
+                </div>
+              </div>
+              {% endif %}
+              <!-- recent end -->
+
+            </div>
+            <div class="single-blog-page">
+              <div class="left-blog">
+                <h4>categories</h4>
+                <ul>
+                  <li>
+                    <a href="#">Portfolio</a>
+                  </li>
+                  <li>
+                    <a href="#">Project</a>
+                  </li>
+                  <li>
+                    <a href="#">Design</a>
+                  </li>
+                  <li>
+                    <a href="#">wordpress</a>
+                  </li>
+                  <li>
+                    <a href="#">Joomla</a>
+                  </li>
+                  <li>
+                    <a href="#">Html</a>
+                  </li>
+                  <li>
+                    <a href="#">Website</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single-blog-page">
+              <div class="left-blog">
+                <h4>archive</h4>
+                <ul>
+                  <li>
+                    <a href="#">07 July 2016</a>
+                  </li>
+                  <li>
+                    <a href="#">29 June 2016</a>
+                  </li>
+                  <li>
+                    <a href="#">13 May 2016</a>
+                  </li>
+                  <li>
+                    <a href="#">20 March 2016</a>
+                  </li>
+                  <li>
+                    <a href="#">09 Fabruary 2016</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single-blog-page">
+              <div class="left-tags blog-tags">
+                <div class="popular-tag left-side-tags left-blog">
+                  <h4>popular tags</h4>
+                  <ul>
+                    <li>
+                      <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                      <a href="#">Project</a>
+                    </li>
+                    <li>
+                      <a href="#">Design</a>
+                    </li>
+                    <li>
+                      <a href="#">Website</a>
+                    </li>
+                    <li>
+                      <a href="#">Joomla</a>
+                    </li>
+                    <li>
+                      <a href="#">Html</a>
+                    </li>
+                    <li>
+                      <a href="#">wordpress</a>
+                    </li>
+                    <li>
+                      <a href="#">Masonry</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End left sidebar -->
+        <!-- Start single blog -->
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="row">
+            {% if posts != '' %}
+            {% for post in posts %}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="/post/{{post['id']}}">
+											<img src="/static/img/blog/1.jpg" alt="">
+										</a>
+                </div>
+                {#<div class="blog-meta">
+                  <span class="comments-type">
+											<i class="fa fa-comment-o"></i>
+											<a href="#">11 comments</a>
+										</span>
+                  <span class="date-type">
+											<i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+										</span>
+                </div>#}
+                <div class="blog-text">
+                  <h4>
+											<a href="/post/{{post['id']}}">{{post.titulo}}</a>
+										</h4>
+                  <p>
+                   {{post.descripcion}}
+                  </p>
+                </div>
+                <span>
+										<a href="/post/{{post['id']}}" class="ready-btn">Read more</a>
+									</span>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!-- End single blog -->
+            
+            <div class="blog-pagination">
+              <ul class="pagination">
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Blog Area -->
+
+  <div class="clearfix"></div>
+
+  <!-- Start Footer bottom Area -->
+  <footer>
+    {% include 'layouts/footer.html' %}
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  {% include 'layouts/scripts.html' %}
+</body>
+
+</html>

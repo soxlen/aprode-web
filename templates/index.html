@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+{% include 'layouts/head.html' %}
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="preloader"></div>
+
+  <header>
+    <!-- header-area start -->
+    <div id="sticker" class="header-area" style="background-color: rgba(16, 29, 109,0.5);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            {% include 'layouts/menu.html' %}
+            <!-- END: Navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header-area end -->
+  </header>
+  <!-- header end -->
+
+  <!-- Start Slider Area -->
+  {% include 'index-compo/slider.html' %}
+  <!-- End Slider Area -->
+
+  <!-- Start About area -->
+  {% include 'index-compo/about.html' %}
+  <!-- End About area -->
+
+  <!-- Start Service area -->
+  {% include 'index-compo/services.html' %}
+  <!-- End Service area -->
+ {#<!-- our-skill-area start -->
+
+  <!-- our-skill-area end -->#}
+
+  <!-- Faq area start -->
+  {% include 'index-compo/info.html' %}
+  <!-- End Faq Area -->
+
+ <!-- Start Wellcome Area -->
+
+  <!-- End Wellcome Area -->
+
+  <!-- Start team Area -->
+  {# 
+  {% include 'index-compo/team.html' %}
+  #}
+  <!-- End Team Area -->
+
+  <!-- Start reviews Area -->
+  {% include 'index-compo/unete.html' %}
+  <!-- End reviews Area -->
+
+  <!-- Start tienda Area -->
+  {#
+  {% include 'index-compo/tienda.html' %}
+  #}
+  <!-- awesome-tienda end -->
+
+  {#<!-- start pricing area -->
+  <!-- End pricing table area -->#}
+
+  <!-- Start Testimonials -->
+  {#
+  {% include 'index-compo/reseñas.html' %}
+  #}
+  <!-- End Testimonials -->
+  
+  <!-- Start Blog Area -->
+  {% include 'index-compo/blog.html' %}
+  <!-- End Blog -->
+
+  <!-- Start Suscrive Area -->
+  <div class="suscribe-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+          <div class="suscribe-text text-center">
+            <h3>Colabora y forma parte del Buen Movimiento</h3>
+            <a class="sus-btn" href="#">Donar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Suscrive Area -->
+  <!-- Start contact Area -->
+  {% include 'index-compo/contacto.html' %}
+  <!-- End Contact Area -->
+
+  <!-- Start Footer bottom Area -->
+  <footer>
+  {% include 'layouts/footer.html' %}
+  </footer>
+
+  <a href="#" class="back-to-top" style="z-index:9999"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+ {% include 'layouts/scripts.html' %}
+</body>
+
+</html>

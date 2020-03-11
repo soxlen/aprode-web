@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  {% include 'layouts/head.html' %}
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="preloader"></div>
+
+  <header>
+    <!-- header-area start -->
+    <div id="sticker" class="header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            {% include 'layouts/menu.html' %}
+            <!-- END: Navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header-area end -->
+  </header>
+  <!-- header end -->
+
+  <!-- Start Bottom Header -->
+  <div class="header-bg page-area">
+    <div class="home-overly"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="slider-content text-center">
+            <div class="header-bottom">
+              <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
+                <h1 class="title2">ONG Asociación Pro Desarrollo Perú - Vida</h1>
+              </div>
+              <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <h2 class="title3">Kuyakusun - Wiñasun - Kawsasun</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Header -->
+  <div class="blog-page area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="page-head-blog">
+            <div class="single-blog-page">
+              <!-- recent start -->
+              <div class="left-blog">
+                <h4>recent post</h4>
+                {% if recientes != '' %}
+                <div class="recent-post">
+                  <!-- start single post -->
+                  {% for rec in recientes %}
+                  <div class="recent-single-post">
+                    <div class="post-img">
+                      <a href="/post/{{rec.id}}">
+												   <img src="/static/img/blog/1.jpg" alt="">
+												</a>
+                    </div>
+                    <div class="pst-content">
+                      <p><a href="/post/{{rec.id}}">{{rec.titulo}}</a></p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <!-- End single post -->
+                </div>
+                {% endif %}
+              </div>
+              <!-- recent end -->
+            </div>
+          </div>
+        </div>
+        <!-- End left sidebar -->
+        <!-- Start single blog -->
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <!-- single-blog start -->
+              {% if data != '' %}
+              {% for dato in data %}
+              <article class="blog-post-wrapper">
+                <div class="post-thumbnail">
+                  <img src="/static/img/blog/6.jpg" alt="" />
+                </div>
+                <div class="post-information">
+                  <h2>{{dato.titulo}}</h2>
+                  <hr>
+                  <div class="entry-content">
+                    <p>{{dato.contenido.replace('\n','<br>').replace(' ','&nbsp;')|safe}}</p>
+                  </div>
+                </div>
+              </article>
+              {% endfor %}
+              {% endif %}
+              <div class="clear"></div>
+              
+              <!-- single-blog end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Blog Area -->
+  <div class="clearfix"></div>
+
+  <!-- Start Footer bottom Area -->
+  <footer>
+    {% include 'layouts/footer.html' %}
+  </footer>
+
+  <a href="#" class="back-to-top" style="z-index:9999;"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  {% include 'layouts/scripts.html' %}
+</body>
+
+</html>
